@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Gerar QRCode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="h1 mb-4">Gerador de QR Code</h1>
+        <form action="/gerarQrCode" method="post" class="form form-group">
+            <span class="h4">Cole o link abaixo: </span>
+            <input type="text" name="txtLink" placeholder="Cole o link aqui..." class="form-control mb-4 mt-2" required>
+            <button type="submit" class="btn btn-primary btn-block">Gerar QR Code</button>
+        </form>
+    </div>
+    {% if url_img %}
+    <div class="img container">
+        <h2 class="h2">Seu QR Code:</h2>
+        <img src="{{ url_img }}" alt="QR Code do link informado" id="imgQrCode" class="img-fluid rounded border">
+    </div>
+    {% endif %}
+</body>
+</html>
